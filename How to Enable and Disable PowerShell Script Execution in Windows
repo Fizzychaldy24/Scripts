@@ -1,0 +1,45 @@
+In Windows, PowerShell scripts are restricted by default for security reasons. To enable or disable the execution of PowerShell scripts, you need to adjust the Execution Policy using PowerShell. Here's how to enable and disable scripts:
+
+1. Check the Current Execution Policy
+First, you can check the current execution policy by running this command in PowerShell: {Get-ExecutionPolicy}
+This will return the current execution policy, such as Restricted, RemoteSigned, Unrestricted, etc.
+
+2. Enable Scripts (Change the Execution Policy):
+To enable the execution of PowerShell scripts, you need to change the execution policy to a less restrictive setting.
+
+2.1
+RemoteSigned: This is a commonly used policy. It allows the execution of locally created scripts but requires downloaded scripts to be signed by a trusted publisher.
+To change the execution policy to RemoteSigned, open PowerShell as Administrator and run the following command: {Set-ExecutionPolicy RemoteSigned}
+
+2.2
+Unrestricted: This allows all scripts to run, but with a warning for scripts downloaded from the internet.
+To change to Unrestricted, use: {Set-ExecutionPolicy Unrestricted}
+
+2.3
+Bypass: This allows scripts to run without any restrictions, useful in some automated environments. However, it is less secure.
+To set the policy to Bypass, run: {Set-ExecutionPolicy Bypass}
+
+Example: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+This changes the policy only for the current user, which is generally safer than modifying it system-wide.
+
+
+Disable Scripts (Restrict the Execution of Scripts):
+
+To disable the execution of PowerShell scripts, you can set the policy back to a restrictive setting like Restricted, which is the default.
+Restricted: This is the default setting, and it doesn’t allow any PowerShell scripts to run.
+
+1. To restrict scripts from running, open PowerShell as Administrator and run: {Set-ExecutionPolicy Restricted}
+This will prevent any script from running, including locally created scripts.
+
+Example:
+To disable scripts only for the current user: Set-ExecutionPolicy Restricted -Scope CurrentUser
+
+
+
+Additional Notes:
+    Scope: You can apply the execution policy to different scopes. These are the most common:
+        Process: Affects only the current PowerShell session.
+        CurrentUser: Affects only the current user.
+        LocalMachine: Affects all users on the machine.
+
+    Warning: Be cautious when changing execution policies. Using less restrictive policies (like Unrestricted or Bypass) can expose your system to potential security risks, especially if you run scripts from untrusted sources.
