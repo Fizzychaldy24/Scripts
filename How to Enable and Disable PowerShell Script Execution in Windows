@@ -1,10 +1,10 @@
 In Windows, PowerShell scripts are restricted by default for security reasons. To enable or disable the execution of PowerShell scripts, you need to adjust the Execution Policy using PowerShell. Here's how to enable and disable scripts:
 
-1. Check the Current Execution Policy
+1.Check the Current Execution Policy
 First, you can check the current execution policy by running this command in PowerShell: {Get-ExecutionPolicy}
 This will return the current execution policy, such as Restricted, RemoteSigned, Unrestricted, etc.
 
-2. Enable Scripts (Change the Execution Policy):
+-Enable Scripts (Change the Execution Policy):
 To enable the execution of PowerShell scripts, you need to change the execution policy to a less restrictive setting.
 
 2.1
