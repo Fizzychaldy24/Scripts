@@ -1,0 +1,51 @@
+1. Basic Bash Script (for Linux/Mac)
+
+What is Bash?
+
+    *Bash is a shell scripting language used for automating tasks in a Linux or Mac terminal.
+    You can create Bash scripts to perform system tasks like file management, installations, or even automation of daily operations.
+
+What this script does:
+
+    It prints some welcome messages.
+    Creates a directory called MyNewDirectory.
+    Changes to that directory.
+    Creates a simple text file (testfile.txt).
+    Lists the files in that directory.
+
+Creating Your First Bash Script:
+    1. Open a Terminal (or command line interface on your system): Ctrl+Alt+T sometimes just ctrl + T
+    2. Create a new file for your script: {touch my_script.sh}
+    3.Make the script executable: {chmod +x my_script.sh}
+
+Edit the script (use any text editor, e.g., nano, vim, or code): {nano my_script.sh}
+or use any text editor like Visual Studio Code or Sublime Text.
+
+Script content:
+{
+#!/bin/bash
+
+echo "Hello, welcome to my first script!"
+echo "This is a basic Bash script."
+
+# Create a directory
+mkdir MyNewDirectory
+echo "A new directory called 'MyNewDirectory' has been created."
+
+# Change into that directory
+cd MyNewDirectory
+echo "You are now in the 'MyNewDirectory' directory."
+
+# Create a simple text file
+echo "This is a test file" > testfile.txt
+echo "A text file 'testfile.txt' has been created."
+
+# List the contents of the directory
+ls
+}
+
+Save and exit the editor (for nano: press CTRL + X, then Y to confirm, then Enter).
+
+Run the script:
+
+    ./my_script.sh
